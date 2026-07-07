@@ -125,6 +125,13 @@ git_override(
 
 bazel_dep(name = "score_platform", version = "0.6.0", dev_dependency = True)
 
+# NOTE: To be removed once score_platform releases a version that includes the feature requirement for the hash library
+git_override(
+    module_name = "score_platform",
+    commit = "8d92b2cc43154bfe2aed9917bb6b46bb9a04c368",
+    remote = "https://github.com/eclipse-score/score.git",
+)
+
 # FIXME: To be removed after https://github.com/eclipse-score/baselibs/issues/266 is resolved
 single_version_override(
     module_name = "grpc-java",
